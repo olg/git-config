@@ -1,0 +1,47 @@
+#### Mac OS X Finder droppings
+
+.AppleDouble
+.DS_Store
+.LSOverride
+
+#### Xcode Per User Files
+
+*.pbxuser
+*.perspectivev3
+*.xcodeproj/*.xcworkspace/xcshareddata/*.xccheckout
+*.xcodeproj/*.xcworkspace/xcshareddata/*.xcscmblueprint
+*.xcworkspace/xcshareddata/*.xccheckout
+*.xcworkspace/xcshareddata/*.xcscmblueprint
+xcuserdata/
+
+#### Python
+
+.idea
+*.egg-info
+*.pyc
+*.pyo
+
+#### Misc
+
+*.orig
+
+#### Thumbnails
+
+._*
+
+#### Files that might appear in the root of a volume
+
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+#### Directories potentially created on remote AFP share
+
+.apdisk
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items

@@ -1,0 +1,95 @@
+[user]
+	email = jwight@mac.com
+	name = Jonathan Wight
+
+[github]
+	user = schwa
+
+########################################################################
+
+[color]
+	ui = auto
+	branch = auto
+	status = auto
+
+[color "status"]
+	header = white
+	added = green
+	updated = blue
+	changed = yellow
+	unracked = red
+
+[core]
+	editor = bbedit -w
+	excludesfile = ~/.config/git/ignore
+	fsyncobjectfiles = true
+	pager = less
+	quotepath = false
+	trustctime = false
+#	whitespace = blank-at-eol,space-before-tab,trailing-space
+
+[credential]
+	helper = osxkeychain
+
+[http]
+	postBuffer = 524288000
+	sslVerify = true
+
+[pack]
+	threads = 0
+
+[push]
+	default = simple
+
+[receive]
+	denyCurrentBranch = warn
+
+[rebase]
+	autosquash = true
+
+[rerere]
+	enabled = true
+
+[status]
+	submodulesummary = true
+
+########################################################################
+
+[difftool]
+	prompt = false
+
+[difftool "BBEdit"]
+	cmd = /usr/bin/bbdiff --wait --resume "$LOCAL" "$REMOTE"
+
+[merge]
+	tool = opendiff
+	log = true
+
+[mergetool]
+	keepBackup = false
+	prompt = false
+
+########################################################################
+
+[alias]
+
+	bbdiff = difftool -t BBEdit
+	cp = cherry-pick
+	deleted = log --diff-filter=D --summary
+	graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
+	ours = checkout --ours --
+	outgoing = log --branches --not --remotes '--format=format:%C(auto,yellow)%h%C(auto,reset) %s %C(auto,blue)%d' --decorate
+	root = rev-parse --show-toplevel
+	score = shortlog --numbered --summary --no-merges
+	status = status -sb
+	subpush = push --recurse-submodules=check
+	subup = submodule update --init --recursive
+	theirs = checkout --theirs --
+
+	# From http://git-wt-commit.rubyforge.org
+	wtf = !git-wtf
+
+	# From https://github.com/defunkt/hub
+	find-sha=branch -avv --contains
+	hub = !hub
+
