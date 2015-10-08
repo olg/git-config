@@ -3,111 +3,111 @@
 # Info here: http://git-scm.com/docs/git-config
 
 [user]
-	email = jwight@mac.com
-	name = Jonathan Wight
+    email = jwight@mac.com
+    name = Jonathan Wight
 
 [github]
-	user = schwa
+    user = schwa
 
 ########################################################################
 
 [color]
-	ui = auto
-	branch = auto
-	status = auto
+    ui = auto
+    branch = auto
+    status = auto
 
 # Works well for my green on black terminal
 [color "status"]
-	header = white
-	added = green
-	updated = blue
-	changed = yellow
-	unracked = red
+    header = white
+    added = green
+    updated = blue
+    changed = yellow
+    unracked = red
 
 [core]
     # As god intended.
-	editor = bbedit -w
+    editor = bbedit -w
 
     # You'll want this. See README.
-	excludesfile = ~/.config/git/ignore
+    excludesfile = ~/.config/git/ignore
 
     # For OSX only. Go read the snarky man page
-	fsyncobjectfiles = true
+    fsyncobjectfiles = true
 
-	pager = less
+    pager = less
 
-	quotepath = false
-	trustctime = false
-#	whitespace = blank-at-eol,space-before-tab,trailing-space
+    quotepath = false
+    trustctime = false
+#   whitespace = blank-at-eol,space-before-tab,trailing-space
 
 # If you're running git on OS X you _will_ want this. Use your OS keychain to store git credentials.
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 
 [http]
     # Without this. Git would often have trouble with stupidly large commits (see Twitter for iOS source code).
-	postBuffer = 524288000
+    postBuffer = 524288000
 
-	sslVerify = true
+    sslVerify = true
 
 [pack]
     # Auto detect right number of threads
-	threads = 0
+    threads = 0
 
 [push]
     # This is now the default...
-	default = simple
+    default = simple
 
 [receive]
-	denyCurrentBranch = updateInstead
+    denyCurrentBranch = updateInstead
 
 [rebase]
-	autosquash = true
+    autosquash = true
 
 [rerere]
     # Remember and re-apply your git conflict resolutions. This is magic: https://www.kernel.org/pub/software/scm/git/docs/git-rerere.html
-	enabled = true
+    enabled = true
 
 [status]
     # Painfully verbose (but vitally important) info about submodules.
-	submodulesummary = true
+    submodulesummary = true
 
 ########################################################################
 
 [difftool]
-	prompt = false
+    prompt = false
 
 [difftool "BBEdit"]
-	cmd = /usr/bin/bbdiff --wait --resume "$LOCAL" "$REMOTE"
+    cmd = /usr/bin/bbdiff --wait --resume "$LOCAL" "$REMOTE"
 
 # I stil vastly prefer venerable old FileMerge for merging. Nothing else is anywhere near as fast or as useful.
 [merge]
-	tool = opendiff
-	log = true
+    tool = opendiff
+    log = true
 
 [mergetool]
-	keepBackup = false
-	prompt = false
+    keepBackup = false
+    prompt = false
 
 ########################################################################
 
 [alias]
 
-	bbdiff = difftool -t BBEdit
-	cp = cherry-pick
-	deleted = log --diff-filter=D --summary
-	find-sha = branch -avv --contains
-	graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
-	ours = checkout --ours --
-	outgoing = log --branches --not --remotes '--format=format:%C(auto,yellow)%h%C(auto,reset) %s %C(auto,blue)%d' --decorate
-	root = rev-parse --show-toplevel
-	score = shortlog --numbered --summary --no-merges
-	status = status -sb
-	subpush = push --recurse-submodules=check
+    bbdiff = difftool -t BBEdit
+    cp = cherry-pick
+    deleted = log --diff-filter=D --summary
+    find-sha = branch -avv --contains
+    graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
+    ours = checkout --ours --
+    outgoing = log --branches --not --remotes '--format=format:%C(auto,yellow)%h%C(auto,reset) %s %C(auto,blue)%d' --decorate
+    root = rev-parse --show-toplevel
+    score = shortlog --numbered --summary --no-merges
+    status = status -sb
+    subpush = push --recurse-submodules=check
 
     # This is singlehandedly the most useful alias. If you borrow nothing else from this config, borrow this (and credential.helper)
-	subup = submodule update --init --recursive
-	theirs = checkout --theirs --
+    subup = submodule update --init --recursive
+    theirs = checkout --theirs --
 
-	# From http://git-wt-commit.rubyforge.org
-	wtf = !git-wtf
+    # From http://git-wt-commit.rubyforge.org
+    wtf = !git-wtf
